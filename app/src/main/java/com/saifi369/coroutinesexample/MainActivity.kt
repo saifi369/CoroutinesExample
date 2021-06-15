@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "onCreate: ${Thread.currentThread().name}")
             }
 
-
         }
     }
 }
