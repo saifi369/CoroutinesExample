@@ -9,6 +9,7 @@ import kotlinx.coroutines.*
 import java.math.BigInteger
 import kotlin.random.Random
 
+const val TAG = "MyTag"
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
@@ -22,6 +23,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnRunCode.setOnClickListener {
+
+            CoroutineScope(Dispatchers.Main.immediate).launch {
+                Log.d(TAG, "onCreate: ${Thread.currentThread().name}")
+                delay(1000)
+                Log.d(TAG, "onCreate: ${Thread.currentThread().name}")
+                delay(1000)
+                Log.d(TAG, "onCreate: ${Thread.currentThread().name}")
+            }
+
 
         }
     }
